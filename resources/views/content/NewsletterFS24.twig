@@ -12,9 +12,9 @@
             if (validateMail(mail)) {
                 $.ajax({
                     url: "{{ NewsletterUrl }}",
-                    data: [
+                    data: {
                         mail: mail
-                    ],
+                    },
                     success: function(data){
                         console.log(data);
                     }
