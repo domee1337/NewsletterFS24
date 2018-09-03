@@ -11,18 +11,22 @@
 
             if (validateMail(mail)) {
                 $.ajax({
-                    url: "{{ NewsletterUrl }}",
+                    url: "/newsletter_fs24/register/",
                     data: {
                         mail: mail
                     },
                     success: function(data){
                         console.log(data);
+                        return false;
                     }
                 })
             }
             else {
                 alert('Bitte überprüfe Deine eingegebene E-Mail');
+                return false;
             }
+
+            return false;
         });
     });
 
