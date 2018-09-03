@@ -9,8 +9,16 @@
         emailBtn.click( function(){
             var mail = emailInput.val();
 
-            if (validateEmail(mail)) {
-                alert(mail);
+            if (validateMail(mail)) {
+                $.ajax({
+                    url: "{{ NewsletterUrl }}",
+                    data: [
+                        mail: mail
+                    ],
+                    success: function(data){
+                        console.log(data);
+                    }
+                })
             }
             else {
                 alert('Bitte überprüfe Deine eingegebene E-Mail');
