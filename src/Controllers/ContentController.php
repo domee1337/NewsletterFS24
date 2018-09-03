@@ -3,6 +3,7 @@ namespace NewsletterFS24\Controllers;
 use Plenty\Plugin\Controller;
 use Plenty\Plugin\Http\Request;
 use Plenty\Plugin\ConfigRepository;
+use Plenty\Plugin\Templates\Twig;
 class ContentController extends Controller
 {
 	
@@ -21,7 +22,7 @@ class ContentController extends Controller
         return $result;
     }
     
-    public function acceptRequest(Request $request)
+    public function acceptRequest(Request $request, Twig $twig)
     {
         $rs = $request->all();
 		$curl = curl_init();
@@ -31,6 +32,6 @@ class ContentController extends Controller
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         $result = curl_exec($curl);
         curl_close($curl);
-        return $result;
+        return $twig->render('NewsletterFS24::content.Weiterleitung');
     }
 }

@@ -16,8 +16,15 @@
                         mail: mail
                     },
                     success: function(data){
-                        console.log(data);
-                        return false;
+                        if(data.valid)
+                        {
+                            alert("Newsletter wurde erfolgreich angefragt, bitte überprüfe dein Posteingang.");
+                        }
+                        else
+                        {
+                            alert(data.error);
+                            return false;                            
+                        }
                     }
                 })
             }
@@ -25,8 +32,6 @@
                 alert('Bitte überprüfe Deine eingegebene E-Mail');
                 return false;
             }
-
-            return false;
         });
     });
 

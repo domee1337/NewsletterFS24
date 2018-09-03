@@ -9,9 +9,18 @@
                   "required": true,
                   "label": "Request URL",
                   "options": {
-                    "defaultValue": "asd"
+                    "defaultValue": "http://pherrewyn1.timmeserver.de/newsletter_fs24/"
                 }
-              }
+              },
+            "newsletter_redirect": {
+              "type": "inputText",
+              "required": true,
+              "label": "Weiterleitung nach Newsletterakzeptierung",
+              "options": {
+                "defaultValue": "/newsletter-akzeptiert"
+            }
+          }
+
         }
       }
   }
