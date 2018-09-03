@@ -21,8 +21,16 @@ class ContentController extends Controller
         return $result;
     }
     
-    public function acceptRequest(string $token, Request $request)
+    public function acceptRequest(Request $request)
     {
-
+        $rs = $request->all();
+		$curl = curl_init();
+		$url = $config->get("NewsletterFS24.newsletter_url");
+        $url = sprintf("%s?%s", $url, http_build_query($rs));
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        $result = curl_exec($curl);
+        curl_close($curl);
+        return $result;
     }
 }
