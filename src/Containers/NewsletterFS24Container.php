@@ -1,9 +1,9 @@
 <?php
- 
+
 namespace NewsletterFS24\Containers;
- 
+
 use Plenty\Plugin\Templates\Twig;
- 
+    
 class NewsletterFS24Container
 {
     public function call(Twig $twig):string
@@ -11,4 +11,3 @@ class NewsletterFS24Container
         return $twig->render('NewsletterFS24::content.NewsletterFS24');
     }
 }
-?>

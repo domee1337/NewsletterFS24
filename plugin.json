@@ -1,16 +1,18 @@
 {
-    "name": "NewsletterFS24",
-    "description": "Newsletter registration",
-    "namespace": "NewsletterFS24",
-    "author": "Dominik Joedecke",
-    "type": "theme",
-    "serviceProvider": "NewsletterFS24\\Providers\\NewsletterFS24ServiceProvider",
-    "dataProviders":
-    [
-        {
-            "key"           :"NewsletterFS24\\Containers\\NewsletterFS24Container",
-            "name"          :"Javascript",
-            "description"   :"Trigger the Newsletter confirmation on Homepage"
-        }
-    ]
+  "name"              :"NewsletterFS24",
+  "description"       :"Plentymarkets NewsletterFS24 plugin",
+  "namespace"         :"NewsletterFS24",
+  "author"            :"plentymarkets GmbH",
+  "keywords"          : ["plentymarkets", "plugins", "container", "NewsletterFS24", "template"],
+  "type"              :"template",
+  "require"           : [],
+  "serviceProvider"   :"NewsletterFS24\\Providers\\NewsletterFS24ServiceProvider",
+  "dataProviders"     :
+  [
+    {
+      "key":"NewsletterFS24\\Containers\\NewsletterFS24Container",
+      "name":"NewsletterFS24",
+      "description":"Display a NewsletterFS24 image and text"
+    }
+  ]
 }

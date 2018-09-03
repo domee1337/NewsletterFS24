@@ -1,18 +1,18 @@
 {
-    "formatVersion": 1,
-    "menu": {
-        "Config.Settings": {
-            "label": "Settings",
-            "formFields": {
-                "newsletter_url": {
-                    "type": "inputText",
-                    "required": true,
-                    "label": "Request URL",
-                    "options": {
-                      "defaultValue": ""
-                  }
+  "formatVersion": 1,
+  "menu": {
+      "Config.Settings": {
+          "label": "Settings",
+          "formFields": {
+              "newsletter_url": {
+                  "type": "inputText",
+                  "required": true,
+                  "label": "Request URL",
+                  "options": {
+                    "defaultValue": "asd"
                 }
-          }
+              }
         }
-    }
+      }
+  }
 }
