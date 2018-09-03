@@ -24,7 +24,7 @@
                         {
                             
                             showModal("Newsletter wurde erfolgreich angefragt, bitte überprüfe dein Posteingang.");
-                            window.location = "/";
+                            emailInput.val("");
                         }
                         else
                         {
@@ -67,7 +67,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="newsletter_modal" tabindex="-1" role="dialog" aria-labelledby="newsletter_modal_label" aria-hidden="true">
+<div class="modal fade checkout__modal" id="newsletter_modal" tabindex="-1" role="dialog" aria-labelledby="newsletter_modal_label" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
