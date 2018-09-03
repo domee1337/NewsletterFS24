@@ -20,6 +20,7 @@
                         if(data.valid)
                         {
                             alert("Newsletter wurde erfolgreich angefragt, bitte überprüfe dein Posteingang.");
+                            window.location = "/";
                         }
                         else
                         {
@@ -33,6 +34,7 @@
                 alert('Bitte überprüfe Deine eingegebene E-Mail');
                 return false;
             }
+            return false;
         });
     });
 
