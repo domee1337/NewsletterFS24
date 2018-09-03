@@ -1,0 +1,16 @@
+{
+    "name": "NewsletterFS24",
+    "description": "Newsletter registration",
+    "namespace": "NewsletterFS24",
+    "author": "Dominik Joedecke",
+    "type": "template",
+    "serviceProvider": "NewsletterFS24\\Providers\\NewsletterFS24ServiceProvider",
+    "dataProviders"         :
+    [
+        {
+            "key"           :"NewsletterFS24\\Containers\\NewsletterFS24Container",
+            "name"          :"Javascript",
+            "description"   :"Trigger the Newsletter confirmation on Homepage"
+        }
+    ]
+}
