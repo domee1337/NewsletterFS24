@@ -5,11 +5,14 @@
 
         var emailInput = $("#exampleInputEmail1");
         var emailBtn = $(".newsletter__btn-wrap").children();
+        var emailModal = $("#newsletter_modal");
+        var emailModalText = $("#newsletter_modal_text");
+
 
         emailBtn.click( function(){
             var mail = emailInput.val();
 
-            if (validateMail(mail)) {
+            if (validateMail(mail) && mail.length > 0) {
                 $.ajax({
                     url: "/newsletter_fs24/register/",
                     data: {
@@ -19,11 +22,13 @@
                         data = JSON.parse(data);
                         if(data.valid)
                         {
-                            alert("Newsletter wurde erfolgreich angefragt, bitte überprüfe dein Posteingang.");
+                            
+                            showModal("Newsletter wurde erfolgreich angefragt, bitte überprüfe dein Posteingang.");
                             window.location = "/";
                         }
                         else
                         {
+                            showModal(data.error);
                             alert(data.error);
                             return false;                            
                         }
@@ -31,7 +36,7 @@
                 })
             }
             else {
-                alert('Bitte überprüfe Deine eingegebene E-Mail');
+                showModal("Bitte überprüfe Deine eingegebene E-Mail.");
                 return false;
             }
             return false;
@@ -50,4 +55,34 @@
             return false;
         }
     }
+
+    function showModal(text)
+    {
+        emailModalText.text(text);
+        emailModal.modal("show");
+    }
 </script>
+
+<!-- MODAL -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="newsletter_modal" tabindex="-1" role="dialog" aria-labelledby="newsletter_modal_label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newsletter_modal_label">Newsletter</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+        <p id="newsletter_modal_text">
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
