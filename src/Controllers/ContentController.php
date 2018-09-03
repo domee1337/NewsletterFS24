@@ -24,6 +24,7 @@ class ContentController extends Controller
     
     public function acceptRequest(Request $request, Twig $twig)
     {
+        $config = pluginApp(ConfigRepository::class);
         $rs = $request->all();
 		$curl = curl_init();
 		$url = $config->get("NewsletterFS24.newsletter_url");
