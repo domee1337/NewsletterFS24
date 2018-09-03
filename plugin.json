@@ -3,7 +3,7 @@
     "description": "Newsletter registration",
     "namespace": "NewsletterFS24",
     "author": "Dominik Joedecke",
-    "type": "template",
+    "type": "theme",
     "serviceProvider": "NewsletterFS24\\Providers\\NewsletterFS24ServiceProvider",
     "dataProviders":
     [
