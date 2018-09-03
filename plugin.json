@@ -11,8 +11,8 @@
   [
     {
       "key":"NewsletterFS24\\Containers\\NewsletterFS24Container",
-      "name":"NewsletterFS24",
-      "description":"Display a NewsletterFS24 image and text"
+      "name":"NewsletterFS24: Javascript",
+      "description":"Trigger the Newsletter confirmation on Homepage"
     }
   ]
 }
