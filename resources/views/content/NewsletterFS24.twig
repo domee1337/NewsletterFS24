@@ -7,7 +7,27 @@
         var emailBtn = $(".newsletter__btn-wrap").children();
 
         emailBtn.click( function(){
-            alert(emailInput.val());
+            var mail = emailInput.val();
+
+            if (validateEmail(mail)) {
+                alert(mail);
+            }
+            else {
+                alert('Bitte überprüfe Deine eingegebene E-Mail');
+            }
         });
     });
+
+    function validateMail(mail) {
+        var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+
+        if(filter.test(mail))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 </script>
