@@ -11,7 +11,7 @@
         
         emailBtn.click( function(){
             var mail = emailInput.val();
-
+            emailBtn.prop("disabled", true);
             if (validateMail(mail) && mail.length > 0) {
                 $.ajax({
                     url: "/newsletter_fs24/register/",
@@ -25,11 +25,12 @@
                             
                             showModal("Newsletter wurde erfolgreich angefragt, bitte überprüfe dein Posteingang.");
                             emailInput.val("");
+                            emailBtn.removeAttr("disabled");
                         }
                         else
                         {
                             showModal(data.error);
-                            alert(data.error);
+                            emailBtn.removeAttr("disabled");
                             return false;                            
                         }
                     }
@@ -37,8 +38,10 @@
             }
             else {
                 showModal("Bitte überprüfe Deine eingegebene E-Mail.");
+                emailBtn.removeAttr("disabled");
                 return false;
             }
+            emailBtn.removeAttr("disabled");
             return false;
         });
     });
