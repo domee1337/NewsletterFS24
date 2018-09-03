@@ -1,14 +1,14 @@
 {% set NewsletterUrl = config("NewsletterFS24.newsletter_url") %}
 <script>
 
-    var emailInput = $("#exampleInputEmail1");
-    var emailBtn = $(".newsletter__btn-wrap").children();
-    var emailModal = $("#newsletter_modal");
-    var emailModalText = $("#newsletter_modal_text");
+    
 
     $(document).ready( function(){
 
-        
+        var emailInput = $("#exampleInputEmail1");
+        var emailBtn = $(".newsletter__btn-wrap").children();
+        var emailModal = $("#newsletter_modal");
+        var emailModalText = $("#newsletter_modal_text");
         emailBtn.click( function(){
             var mail = emailInput.val();
             emailBtn.prop("disabled", true);
@@ -23,13 +23,13 @@
                         if(data.valid)
                         {
                             
-                            showModal("Newsletter wurde erfolgreich angefragt, bitte überprüfe dein Posteingang.");
+                            showModal("Newsletter wurde erfolgreich angefragt, bitte überprüfe dein Posteingang.", emailModal, emailModalText);
                             emailInput.val("");
                             emailBtn.removeAttr("disabled");
                         }
                         else
                         {
-                            showModal(data.error);
+                            showModal(data.error, emailModal, emailModalText);
                             emailBtn.removeAttr("disabled");
                             return false;                            
                         }
@@ -37,7 +37,7 @@
                 })
             }
             else {
-                showModal("Bitte überprüfe Deine eingegebene E-Mail.");
+                showModal("Bitte überprüfe Deine eingegebene E-Mail.", emailModal, emailModalText);
                 emailBtn.removeAttr("disabled");
                 return false;
             }
@@ -59,10 +59,10 @@
         }
     }
 
-    function showModal(text)
+    function showModal(text, modal, txt)
     {
-        emailModalText.text(text);
-        emailModal.modal("show");
+        txt.text(text);
+        modal.modal("show");
     }
 </script>
 
