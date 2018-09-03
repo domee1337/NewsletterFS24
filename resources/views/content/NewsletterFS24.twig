@@ -16,6 +16,7 @@
                         mail: mail
                     },
                     success: function(data){
+                        data = JSON.parse(data);
                         if(data.valid)
                         {
                             alert("Newsletter wurde erfolgreich angefragt, bitte überprüfe dein Posteingang.");
